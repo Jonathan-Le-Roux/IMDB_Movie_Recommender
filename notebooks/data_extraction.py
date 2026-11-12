@@ -40,7 +40,7 @@ def download_all_data():
         tsv_path = f"../data/{filename}"
 
         with open(gz_path, "wb") as file:
-            for chunk in response.iter_content(chunk_size=8192):
+            for chunk in response.iter_content(chunk_size=1024*1024*5):
                 if chunk:
                     file.write(chunk)
 
